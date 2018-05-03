@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC69EC0A-5D52-4076-8090-C78B445E5C70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CBS.Payment.Alipay</RootNamespace>
+    <AssemblyName>CBS.Payment.Alipay</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlipayConfigHelper.cs" />
+    <Compile Include="AlipayCoreHelper.cs" />
+    <Compile Include="AlipayHelper.cs" />
+    <Compile Include="AlipayNotifyHelper.cs" />
+    <Compile Include="AlipayCommon.cs" />
+    <Compile Include="MD5Helper.cs" />
+    <Compile Include="Model\AlipayAccountQuery.cs" />
+    <Compile Include="Model\AlipayAccountQueryDetail.cs" />
+    <Compile Include="Model\AlipayAccountQueryResult.cs" />
+    <Compile Include="Model\AlipayFreeze.cs" />
+    <Compile Include="Model\AlipayTrans.cs" />
+    <Compile Include="Model\AlipayServiceName.cs" />
+    <Compile Include="Model\AlipayCaePay.cs" />
+    <Compile Include="Model\AlipayPay.cs" />
+    <Compile Include="Model\AlipayRefund.cs" />
+    <Compile Include="Model\AlipayRoyalty.cs" />
+    <Compile Include="Model\AlipaySuppl.cs" />
+    <Compile Include="Model\AlipayUnFreeze.cs" />
+    <Compile Include="Model\AlipayRequestBase.cs" />
+    <Compile Include="Model\AlipayCaePayResult.cs" />
+    <Compile Include="Model\AlipayResponseBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

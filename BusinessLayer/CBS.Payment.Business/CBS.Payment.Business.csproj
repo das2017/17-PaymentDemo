@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B82B9B6-47A2-4304-8C12-785B23759EF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CBS.Payment.Business</RootNamespace>
+    <AssemblyName>CBS.Payment.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IPaymentService.cs" />
+    <Compile Include="PaymentHelper.cs" />
+    <Compile Include="PaymentFacade.cs" />
+    <Compile Include="ThirdPayment\AlipayHelper.cs" />
+    <Compile Include="ThirdPayment\AlipayVerify.cs" />
+    <Compile Include="ThirdPayment\TenpayHelper.cs" />
+    <Compile Include="ThirdPayment\PaymentNotifyLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdPayment\AlipayLogic.cs" />
+    <Compile Include="ThirdPayment\TenpayLogic.cs" />
+    <Compile Include="ThirdPayment\TenpayVerify.cs" />
+    <Compile Include="ThirdPayment\ThirdPaymentFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLayer\CBS.Payment.Utility\CBS.Payment.Utility.csproj">
+      <Project>{49650b9d-ebad-49c6-a4e1-b59a064e90fa}</Project>
+      <Name>CBS.Payment.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\CBS.Payment.Alipay\CBS.Payment.Alipay.csproj">
+      <Project>{dc69ec0a-5d52-4076-8090-c78b445e5c70}</Project>
+      <Name>CBS.Payment.Alipay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\CBS.Payment.DB\CBS.Payment.DB.csproj">
+      <Project>{8ad58a93-a709-416d-963e-16473a865eec}</Project>
+      <Name>CBS.Payment.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\CBS.Payment.Tenpay\CBS.Payment.Tenpay.csproj">
+      <Project>{99e4e95a-325e-4c96-821e-44f5cbaaceec}</Project>
+      <Name>CBS.Payment.Tenpay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\CBS.Payment.DTO\CBS.Payment.DTO.csproj">
+      <Project>{732178b8-a354-486e-8876-7aaee4674966}</Project>
+      <Name>CBS.Payment.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\CBS.Payment.Entity\CBS.Payment.Entity.csproj">
+      <Project>{e2ab4f3f-c22a-4459-802f-9aada83cb6fb}</Project>
+      <Name>CBS.Payment.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

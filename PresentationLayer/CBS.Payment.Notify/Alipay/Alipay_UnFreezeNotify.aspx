@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alipay_UnFreezeNotify.aspx.cs" Inherits="CBS.Payment.Notify.Alipay.Alipay_UnFreezeNotify" %>
