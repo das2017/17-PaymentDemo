@@ -10,11 +10,11 @@ namespace CBS.Payment.Business.ThirdPayment
     {
         public static IPaymentService Create(PayChannels channels)
         {
-            if (channels.ToString().Equals("alipay", StringComparison.OrdinalIgnoreCase))
+            if (channels == PayChannels.Alipay)
             {
                 return new ThirdPayment.AlipayLogic();
             }
-            if (channels.ToString().Equals("tenpay", StringComparison.OrdinalIgnoreCase))
+            if (channels == PayChannels.Tenpay)
             {
                 return new ThirdPayment.TenpayLogic();
             }
